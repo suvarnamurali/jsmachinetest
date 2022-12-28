@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Check Password </title>
+    <style>
+        .check_pwd {
+            background-color: grey;
+            width: 800px;
+            height: 200px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 28/11/22  -->
+
+    <!-- ******************   CHECK PASSWORD    ******************* -->
+
+    <div class="check_pwd">
+
+        <br><br>
+
+        <p>
+            <label for=""> Enter Password </label>
+            <input type="text" placeholder="Enter password" id="t1" /> <br /> <br />
+            <input type="button" class="check" value="Check" onclick="check_password()" /> <br /> <br />
+            <label for=""> Output: </label>
+            <input type="text" id="t2" readonly />
+        </p>
+
+    </div> <br>
+
+
+    <!-- ********************************************************* -->
+
+
+
+    <script>
+
+        //  ****************    CHECK PASSWORD     *****************
+
+        function check_password() {
+            var result;
+            var string = document.getElementById("t1").value;
+
+
+            if (string.match(/[a-z]/g) && string.match(/[A-Z]/g) &&
+                string.match(/[0-9]/g) && string.length >= 8 &&
+                string.match(/\W/g) && string[0].toUpperCase() === string[0]) {
+                result = "STRONG";
+            }
+            else if (string.match(/[a-z]/g) && string.match(/[A-Z]/g)&&
+                string.match(/[0-9]/g)) {
+                result = "WEAK";
+            }
+            else {
+                result = "invalid";
+            }
+
+            document.getElementById("t2").value = result;
+        }
+
+        // *******************************************************
+
+    </script>
+
+
+
+</body>
+
+</html>

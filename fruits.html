@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .fr {
+            background-color: aqua;
+            width: 800px;
+            height: 200px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ******************   FRUITS    ******************* -->
+
+    <div class="fr">
+
+        <label for="">Select Fruits </label>
+        <select name="" id="sel">
+            <option value="apple">apple</option>
+            <option value="banana">banana</option>
+            <option value="orange">orange</option>
+            <option value="mango">mango</option>
+            <option value="kiwi">kiwi</option>
+            <option value="grapes">grapes</option>
+            <option value="strawberry">strawberry</option>
+            <option value="pineapple">pineapple</option>
+        </select>
+        <br><br><br>
+
+        <button type="submit" onclick="del()">Delete</button> <br><br>
+        <span> Old Array : </span> <span id="old"></span> <br><br>
+        <span> New Array : </span> <span id="new"></span> <br><br>
+        <span id="sp"></span>
+
+    </div> <br>
+
+
+    <!-- ************************************************* -->
+
+
+    <script>
+
+        // ******************     FRUITS     *******************
+
+        function del() {
+            var fruits = ['apple', 'banana', 'orange', 'mango', 'kiwi']
+            document.getElementById('old').innerHTML = fruits
+            var str = document.getElementById('sel').value
+            var flag = 0
+            for (var i = 0; i < fruits.length; i++) {
+                if (str == fruits[i]) {
+
+                    delete fruits[i]
+                    flag = 0
+                    break
+
+                }
+                else {
+                    flag = 1
+
+                }
+
+            }
+
+            if (flag == 0) {
+                console.log(fruits)
+            }
+            else {
+                document.getElementById('sp').innerHTML = 'fruit is not present in the array'
+            }
+            document.getElementById('new').innerHTML = fruits
+
+        }
+
+
+        // *******************************************************
+
+    </script>
+
+
+</body>
+
+</html>

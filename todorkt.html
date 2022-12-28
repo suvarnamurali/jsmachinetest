@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To_do_List</title>
+    <!-- <script src="{% static 'javascript/js_1.js' %}"></script> -->
+    
+
+</head>
+
+<body onload="load()">
+    <div>
+<div class="col-12">
+        <h1>Add Product</h1>
+
+        <table>
+            <tr>
+                <td>Product Name</td>
+                <td><input type="text" id="pname"></td>
+            </tr>
+            <tr>
+                <td>Product Discription</td>
+                <td><input type="text" id="pspec"></td>
+            </tr>
+            <tr>
+                <td>Current Stock</td>
+                <td><input type="text" id="stock"></td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td><input type="text" id="price"></td>
+            </tr>
+
+           
+        </table>
+        <input type="submit" id="add" onclick="addRow()">
+        
+    </div>
+    <br>
+    <br>
+
+
+    <div  id="mydata" class="col-12">
+
+
+<table border="1" style="width:100%" id="myTableData">
+    <tr>
+        
+        
+        <td>p_name</td>
+        <td>p_dspec</td>
+        <td>price</td>
+        <td>current_stock</td>
+        <td colspan="2">
+            
+        </td>
+        
+       
+    </tr>
+
+    
+</table>
+
+    </div>
+
+    
+
+</div>
+
+    <script>
+
+        function addRow() {
+
+            var product = document.getElementById("pname");
+            var dspec = document.getElementById("pspec");
+            var stock = document.getElementById("stock");
+            var price = document.getElementById("price");
+            var table = document.getElementById("myTableData");
+
+            var rowCount = table.rows.length;
+            var row = table.insertRow(rowCount);
+
+
+            
+            row.insertCell(0).innerHTML = product.value;
+            row.insertCell(1).innerHTML = dspec.value;
+            row.insertCell(2).innerHTML = stock.value;
+            row.insertCell(3).innerHTML = price.value;
+            row.insertCell(4).innerHTML = '<input type="button" onclick="ChangeColor()" value="edit" id="btn" />'
+            row.insertCell(4).innerHTML = '<input type="button" onclick="deleterow()" value="delete" id="btn" />'
+        }
+
+        function deleterow(){
+            document.rowCount.
+
+
+
+        }
+
+    function load() {
+            console.log("Page load finished");
+        }
+
+    </script>
+
+
+</body>
+
+</html>

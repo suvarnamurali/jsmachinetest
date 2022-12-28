@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        //  Program to find sum of digits of a number
+
+        var num = 123;
+        var lastDigit = 0;
+        var sumOfAllDigits = 0;
+        while (num != 0) {
+            lastDigit = num % 10;
+            sumOfAllDigits = sumOfAllDigits + lastDigit;
+            num = parseInt(num / 10);
+        }
+        document.write("Sum of all digits is ", sumOfAllDigits);
+
+    </script>
+
+</body>
+
+</html>

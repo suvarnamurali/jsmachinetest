@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Sum of prime numbers </title>
+</head>
+
+<body>
+
+    <script>
+
+        function sumPrimes(num) {
+            //create an array with values from 1 to 10
+
+            var val = Array.from({ length: num }, (_, i) => i + 1)
+
+            val = val.filter((number) => {
+                for (var i = 2; i < number; i++) {
+                    if (number % i === 0) {
+
+                        return false
+                    }
+                }
+                return number > 1    // [2, 3, 5, 7]
+            }).reduce(function (a, b) {
+                return a + b   //sum = 17
+            })
+            return val
+        }
+
+        document.write(sumPrimes(10));
+
+    </script>
+
+</body>
+
+</html>

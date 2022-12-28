@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> BackgroundColor </title>
+    <style>
+         #bg {
+            background-color: blanchedalmond;
+            height: 250px;
+            width: 800px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ******************   BACKGROUND COLOR    ******************* -->
+
+
+    <label for="">Select a color</label>
+    <select name="colors" id="col" onchange="changeBgColor()">
+        <option value="Select color"> Select color </option>
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="yellow">Yellow</option>
+        <option value="green">Green</option>
+    </select> <br><br><br>
+
+    <div id="bg"></div> <br>
+
+
+    <!-- ********************************************************* -->
+
+    <script>
+
+        //  ****************    BACKGROUND COLOR     *****************
+
+        function changeBgColor() {
+
+            // var sel_color = document.getElementById('col').value
+            // var div_bgcolor = document.getElementById('bg')
+
+            document.getElementById('bg').style.backgroundColor = document.getElementById('col').value
+
+            // if (sel_color == 'red') {
+            //     div_bgcolor.style.backgroundColor = 'red'
+            // }
+            // else if (sel_color == 'blue') {
+            //     div_bgcolor.style.backgroundColor = 'blue'
+            // }
+            // else if (sel_color == 'yellow') {
+            //     div_bgcolor.style.backgroundColor = 'yellow'
+            // }
+            // else if (sel_color == 'green') {
+            //     div_bgcolor.style.backgroundColor = 'green'
+            // }
+
+        }
+
+        // *********************************************************
+
+    </script>
+
+</body>
+
+</html>

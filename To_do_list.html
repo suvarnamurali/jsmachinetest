@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To_do_List</title>
+    <!-- <script src="{% static 'javascript/js_1.js' %}"></script> -->
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        button {
+            padding: 7px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #3498db;
+        }
+
+        #myform,
+        #mydata {
+            width: 40%;
+            font-size: x-large;
+            font-weight: bolder;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        textarea {
+            border-radius: 5px;
+            width: 355px;
+            height: 150px;
+        }
+
+        input {
+            border-radius: 5px;
+            width: 350px;
+            height: 60px;
+            padding: 5px;
+            border: solid black 1px;
+        }
+
+        .sub {
+            border-radius: 5px;
+            width: 150px;
+            height: 60px;
+            padding: 5px;
+            border: solid black 1px;
+            font-size: x-large;
+            font-weight: bolder;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background-color: #3498db;
+        }
+
+        #btn {
+            width: 100px;
+            height: 40px;
+        }
+    </style>
+
+</head>
+
+<body onload="load()">
+
+    <div id="myform">
+
+        <h3> Add Task and Description Details</h3> <br><br>
+
+        <table cellspacing="30px">
+            <tr>
+                <td width="30%">Sl No </td>
+                <td width="70%"><input type="text" id="no"></td>
+            </tr>
+            <tr>
+                <td>Task </td>
+                <td><input type="text" id="task"></td>
+            </tr>
+            <tr>
+                <td>Description </td>
+                <td><textarea name="" id="desc" cols="" rows=""></textarea></td>
+            </tr>
+            <tr>
+                <td>Date </td>
+                <td><input type="text" id="date"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input class="sub" type="button" id="add" value="Submit" onclick="Javascript:addRow()">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="mydata">
+        <h3> Data Entered </h3> <br><br>
+        <table id="myTableData" border="1" cellpadding="2" align="center">
+            <tr>
+                <td width="10%"><b>Sl No</b></td>
+                <td width="25%"><b>Task</b></td>
+                <td width="35%"> <b>Description</b></td>
+                <td width="15%"><b>Date</b></td>
+                <td width="15%"><b>Status</b></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+
+        function addRow() {
+
+            var slno = document.getElementById("no");
+            var task = document.getElementById("task");
+            var desc = document.getElementById("desc");
+            var date = document.getElementById("date");
+            var table = document.getElementById("myTableData");
+
+            var rowCount = table.rows.length;
+            var row = table.insertRow(rowCount);
+
+
+            row.insertCell(0).innerHTML = slno.value;
+            row.insertCell(1).innerHTML = task.value;
+            row.insertCell(2).innerHTML = desc.value;
+            row.insertCell(3).innerHTML = date.value;
+            row.insertCell(4).innerHTML = '<input type="button" onclick="ChangeColor()" value="Complete" id="btn" />'
+        }
+
+        function ChangeColor() {
+
+            if (btn.value === "Complete") {
+                btn.value = "Completed";
+                document.getElementById('btn').style.backgroundColor = ' #ffcccc';
+                document.getElementById('btn').style.color = '#e60000';
+            }
+            else {
+                btn.value = "Complete";
+                document.getElementById('btn').style.backgroundColor = ' #99ff99';
+                document.getElementById('btn').style.color = ' #004d00';
+            }
+
+        }
+
+        function load() {
+            console.log("Page load finished");
+        }
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> To find the count of a number in the given array </title>
+</head>
+
+<body>
+
+
+    <script>
+
+        var found = 0
+        count = 0
+        var array = [23, 67, 89, 76, 98, 45, 67, 89]
+        var num = Number(prompt('Enter the Number'))
+
+        for (var i = 0; i < array.length; i++) {
+            if (array[i] == num) {
+                found = 1
+                // console.log(i)
+                count++
+            }
+
+        }
+        if (found == 1) {            
+            // console.log('Number found')
+            document.write('Number found <br><br>')
+            // console.log('Count ' + count)
+            document.write('Count ' + count)
+        }
+        else {
+            // console.log('Number not found')
+            document.write('Number not found')
+        }
+
+    </script>
+
+</body>
+
+</html>

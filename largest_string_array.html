@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> To find the largest string in the given array </title>
+</head>
+
+<body>
+
+    <script>
+
+        var largest
+        var length = 0
+        var array = ['abc', 'cde', 'efgh', 'ijkl', 'mnopq', 'rstuvwxyz']
+        var str = array[0]
+
+        for (var i = 0; i < array.length; i++) {
+            if (array[i].length > length) {
+                length = array[i].length
+                largest = array[i]
+            }
+        }
+        document.write('Largest string in the given array is ', largest)
+
+    </script>
+
+</body>
+
+</html>
